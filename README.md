@@ -2,9 +2,11 @@
 
 This repository explores a fascinating probability puzzle through both a numerical simulation and a formal analytical solution.
 
-## The Problem
+## Problems
 
-> Two numbers, X and Y, are chosen uniformly at random from the interval [0, 1]. What is the probability that the fraction Y/X will round to an even number?
+> 1. Two numbers, X and Y, are chosen uniformly at random from the interval [0, 1]. What is the probability that the fraction Y/X will round to an even number?
+
+> 2. Two numbers, X and Y, are chosen uniformly at random from the interval [0, 1]. What is the probability that the floor of fraction Y/X will be an even number?
 
 
 ## Approaches
@@ -16,11 +18,11 @@ This repository explores a fascinating probability puzzle through both a numeric
 
 ### 1. Simulation
 
-The `main.py` script uses a Monte Carlo method to estimate the probability. It repeatedly performs the following steps:
+The `main.py` repeatedly performs the following steps:
 1.  Generates a pair of random numbers (X, Y) from a uniform distribution between 0 and 1.
 2.  For each pair, it calculates the fraction `Y/X`.
-3.  The fraction is rounded to the nearest integer.
-4.  It checks if the rounded result is an even number.
+3.  The fraction is rounded/floored to the nearest integer.
+4.  It checks if the rounded/floored result is an even number.
 5.  The final probability is approximated by the ratio of the number of "even" outcomes to the total number of trials.
 
 ### 2. Analytical Solution
@@ -31,6 +33,12 @@ The fraction `Y/X` rounds to a non-negative even integer n (where `n` = 0, 2, 4,
 
 <p align="center">
   <img src="https://quicklatex.com/cache3/19/ql_e463cf4489c2f85d210ba4a19d3b9819_l3.png" alt="LaTeX Image"/>
+</p>
+
+The fraction `Y/X` floors to a non-negative even integer n (where `n` = 0, 2, 4, ...) if it falls within the interval:
+
+<p align="center">
+  <img src="https://quicklatex.com/cache3/c7/ql_88d5abe55103c4c6393be60f386a7ac7_l3.png" alt="LaTeX Image"/>
 </p>
 
 
