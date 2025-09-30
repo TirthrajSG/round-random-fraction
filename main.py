@@ -21,3 +21,11 @@ for t in range(testcases):
         outcomes[i] = 1 if rounded_fraction%2==0 else 0
 
     print(sum(outcomes)/len(outcomes))
+
+# Result:
+# 0.46321
+# 0.46489
+# 0.46412
+# 0.46423
+# 0.4664
+# Probability ~ 0.464
