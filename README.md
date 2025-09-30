@@ -1,4 +1,4 @@
-# Probability Puzzle: Rounding of a Random Fraction
+# Probability Puzzle: Rounding of a Fraction
 
 This repository explores a fascinating probability puzzle through both numerical simulation and formal analytical solution.
 
