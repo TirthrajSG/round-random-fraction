@@ -27,8 +27,11 @@ The `main.py` script uses a Monte Carlo method to estimate the probability. It r
 
 The analytical solution involves geometric probability. Choosing two numbers X and Y from [0, 1] is equivalent to picking a random point (X, Y) from a unit square in the Cartesian plane. The probability is the area of the region within this square that satisfies the condition.
 
-The fraction Y/X rounds to a non-negative even integer n (where n = 0, 2, 4, ...) if it falls within the interval:
+The fraction `Y/X` rounds to a non-negative even integer n (where `n` = 0, 2, 4, ...) if it falls within the interval:
 
-![](https://quicklatex.com/cache3/19/ql_e463cf4489c2f85d210ba4a19d3b9819_l3.png)
+<p align="center">
+  <img src="https://quicklatex.com/cache3/19/ql_e463cf4489c2f85d210ba4a19d3b9819_l3.png" alt="LaTeX Image"/>
+</p>
 
-We can find the total favorable area by summing the areas for each case of n.
+
+We can find the total favorable area by summing the areas for each case of `n`.
