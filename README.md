@@ -6,18 +6,15 @@ This repository explores a fascinating probability puzzle through both a numeric
 
 > Two numbers, X and Y, are chosen uniformly at random from the interval [0, 1]. What is the probability that the fraction Y/X will round to an even number?
 
-*Note: Rounding is to the nearest integer. The number 0 is considered an even number.*
 
 ## Approaches
 
-Two methods were used to solve this problem:
-
-1.  **Monte Carlo Simulation (`main.py`)**: A Python script that simulates the random process a large number of times to approximate the probability.
+1.  **Simulation (`main.py`)**: A Python script that simulates the random process a large number of times to approximate the probability.
 2.  **Analytical Solution (`solution.ipynb`)**: A Jupyter Notebook that derives the exact probability using geometric probability and calculus.
 
 ---
 
-### 1. Monte Carlo Simulation
+### 1. Simulation
 
 The `main.py` script uses a Monte Carlo method to estimate the probability. It repeatedly performs the following steps:
 1.  Generates a pair of random numbers (X, Y) from a uniform distribution between 0 and 1.
@@ -26,20 +23,12 @@ The `main.py` script uses a Monte Carlo method to estimate the probability. It r
 4.  It checks if the rounded result is an even number.
 5.  The final probability is approximated by the ratio of the number of "even" outcomes to the total number of trials.
 
-#### Code Snippet (`main.py`)
-```python
-import random
+### 2. Analytical Solution
 
-testcases = 5
-n = 100000
+The analytical solution involves geometric probability. Choosing two numbers X and Y from [0, 1] is equivalent to picking a random point (X, Y) from a unit square in the Cartesian plane. The probability is the area of the region within this square that satisfies the condition.
 
-for t in range(testcases):
+The fraction Y/X rounds to a non-negative even integer n (where n = 0, 2, 4, ...) if it falls within the interval:
 
-    outcomes = [0]*n
-    for i in range(n):
-        generated_num1 = random.uniform(0,1)
-        generated_num2 = random.uniform(0,1)
-        rounded_fraction = round(generated_num1/generated_num2)
-        outcomes[i] = 1 if rounded_fraction%2==0 else 0
+![](https://quicklatex.com/cache3/19/ql_e463cf4489c2f85d210ba4a19d3b9819_l3.png)
 
-    print(sum(outcomes)/len(outcomes))
+We can find the total favorable area by summing the areas for each case of n.
