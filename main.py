@@ -7,25 +7,22 @@ round to a even number.
 """
 
 import random
+import math
 
-testcases = 5
-n = 100000
+n = 10000000
 
-for t in range(testcases):
+outcomes_rounded = [0]*n
+outcomes_floored = [0]*n
+for i in range(n):
+    generated_num1 = random.random()
+    generated_num2 = random.random()
+    rounded_fraction = round(generated_num1/generated_num2)
+    floored_fraction = math.floor(generated_num1/generated_num2)
+    outcomes_rounded[i] = 1 if rounded_fraction%2==0 else 0
+    outcomes_floored[i] = 1 if floored_fraction%2==0 else 0
 
-    outcomes = [0]*n
-    for i in range(n):
-        generated_num1 = random.uniform(0,1)
-        generated_num2 = random.uniform(0,1)
-        rounded_fraction = round(generated_num1/generated_num2)
-        outcomes[i] = 1 if rounded_fraction%2==0 else 0
+print("P(faction rounded is even) =", sum(outcomes_rounded)/n)
+print("P(faction floored is even) =", sum(outcomes_floored)/n)
 
-    print(sum(outcomes)/len(outcomes))
-
-# Result:
-# 0.46321
-# 0.46489
-# 0.46412
-# 0.46423
-# 0.4664
-# Probability ~ 0.464
+# P(faction rounded is even) = 0.4645017
+# P(faction floored is even) = 0.6533245
